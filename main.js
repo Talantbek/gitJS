@@ -42,6 +42,7 @@ $(window).resize(function(){
     startXY();
   }); 
 
+// Построение графика
 startXY = function(){
     var maxY = Math.max.apply(null, arrayY);
     var minY = Math.min.apply(null, arrayY);
@@ -65,6 +66,7 @@ startXY = function(){
     xoy(width, height, widthStep, heightStep, stepOY, maxX, maxY, minY);
 }
 
+// Прорисовка графика
 xy = function(xo, yo, xl, yl, minY, minMaxX, minMaxY, widthStep, heightStep, height) {
     var x1 = (xo+1)*widthStep;
     var y1 = ((height - yo*heightStep)+minY*heightStep)-heightStep;
@@ -78,6 +80,7 @@ xy = function(xo, yo, xl, yl, minY, minMaxX, minMaxY, widthStep, heightStep, hei
     // lineXY.curveTo(xo*(width/mm), , x*(width/mm), ,x*(width/mm), (height - y*(height/mm))+min*(height/mm));
 }
 
+// Прорисовка оси коордиат
 xoy = function(width, height, widthStep, heightStep, stepOY, maxX, maxY, minY) {
     var lineOY = Layer.path();   
     lineOY.moveTo(widthStep, 0);
